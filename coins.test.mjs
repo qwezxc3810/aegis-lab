@@ -27,3 +27,15 @@ test("문자열 보상은 허용하지 않는다", () => {
     }, TypeError);
 
 });
+
+test("NaN 보상은 허용하지 않는다", () => {
+    assert.throws(() => {
+        calculateCoins(100, NaN, true);
+    }, TypeError);
+});
+
+test("무한대 보상은 허용하지 않는다", () => {
+    assert.throws(() => {
+        calculateCoins(100, Infinity, true);
+    }, TypeError);
+});

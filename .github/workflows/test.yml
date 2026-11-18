@@ -1,26 +1,27 @@
+
 name: AEGIS Automatic Test
 
 on:
-    push:
-        branches: [main]
-    pull_request:
-        branches: [main]
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
-        permissions:
-            contents: read
+permissions:
+  contents: read
 
-            jobs:
-                unit-test:
-                    runs-on: ubuntu-latest
-                    
-                    steps:
-                        - name: Get source code
-                          uses: actions/checkout@v4
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
 
-                          -name: Install Node.js
-                            uses: actions/setup-node@v4
-                            with:
-                                node-version: '24'
+    steps:
+      - name: Get source code
+        uses: actions/checkout@v4
 
-                                -name: Run tests
-                                  run: node --test
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Run tests
+        run: node --test

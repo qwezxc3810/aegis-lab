@@ -14,3 +14,9 @@ test("승인하지 않으면 보상 동전이 지급되지 않는다", () => {
 
     assert.equal(result, 100);
 });
+
+test("음수 보상은 허용하지 않는다", () => {
+    assert.throws(() => {
+        calculateCoins(100, -50, true);
+    }, RangeError);
+});

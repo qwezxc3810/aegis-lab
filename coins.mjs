@@ -1,4 +1,8 @@
 export function calculateCoins(currentCoins, reward, approved) {
+    if (typeof reward !== "number") {
+        throw new TypeError("보상은 유효한 숫자여야 합니다.");
+    }
+   
     if (reward < 0) {
         throw new RangeError("보상은 음수가 될 수 없습니다.");
     }

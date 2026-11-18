@@ -19,4 +19,11 @@ test("음수 보상은 허용하지 않는다", () => {
     assert.throws(() => {
         calculateCoins(100, -50, true);
     }, RangeError);
+    });
+
+test("문자열 보상은 허용하지 않는다", () => {
+    assert.throws(() => {
+        calculateCoins(100, "50", true);
+    }, TypeError);
+
 });

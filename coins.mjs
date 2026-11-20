@@ -1,18 +1,17 @@
 export function calculateCoins(currentCoins, reward, approved) {
-   
-    if (typeof reward !== "number" || !Number.isFinite(reward)) {
-  throw new TypeError("보상은 유효한 숫자여야 합니다.");
-}
-   
-    if (reward < 0) {
-        throw new RangeError("보상은 음수가 될 수 없습니다.");
-    }
-    
-    if(!approved) {
-        return currentCoins;
-    }
+  if (typeof reward !== "number" || !Number.isFinite(reward)) {
+    throw new TypeError("보상은 유효한 숫자여야 합니다.");
+  }
 
-    return currentCoins + reward;
+  if (reward < 0) {
+    throw new RangeError("보상은 음수가 될 수 없습니다.");
+  }
+
+  if (!approved) {
+    return currentCoins;
+  }
+
+  return currentCoins + reward;
 }
 
 // export	다른 파일에서도 사용 가능하게 공개

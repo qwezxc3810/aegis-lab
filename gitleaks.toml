@@ -1,0 +1,9 @@
+title = "AEGIS Secret Scanning Rules"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "aegis-demo-secret"
+description = "Detect AEGIS demonstration secrets"
+regex = '''AEGIS_DEMO_SECRET_[A-Z0-9]{12}'''

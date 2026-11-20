@@ -12,7 +12,7 @@ export function calculateCoins(currentCoins, reward, approved) {
         return currentCoins;
     }
 
-    return currentCoins + reward;
+    return currentCoins - reward;
 }
 
 // export	다른 파일에서도 사용 가능하게 공개

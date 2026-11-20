@@ -1,3 +1,5 @@
+const unuseReward = 123;
+
 export function calculateCoins(currentCoins, reward, approved) {
   if (typeof reward !== "number" || !Number.isFinite(reward)) {
     throw new TypeError("보상은 유효한 숫자여야 합니다.");
